@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/llama_cloud-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llama_cloud-{{ version }}.tar.gz
   sha256: e86f8791c053590d70cc59e0fc13ce72f9b681a8e658bc61df86d0285288d8ee
 
 build:
