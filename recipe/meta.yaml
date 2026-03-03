@@ -10,17 +10,17 @@ source:
   sha256: e86f8791c053590d70cc59e0fc13ce72f9b681a8e658bc61df86d0285288d8ee
 
 build:
-  noarch: python
   number: 0
+  skip: true  # [py<310 or py>=314]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.9
+    - python
     - pip
     - poetry-core
   run:
-    - python >=3.9,<3.14
+    - python
     - pydantic >=1.10
     - httpx >=0.20.0
     - certifi >=2024.7.4
@@ -43,6 +43,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   dev_url: https://github.com/run-llama/llama_cloud
+  doc_url: https://docs.cloud.llamaindex.ai
 
 extra:
   recipe-maintainers:
