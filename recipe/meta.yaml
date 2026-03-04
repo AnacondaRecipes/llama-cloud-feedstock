@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<310 or py>=314]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -28,6 +28,7 @@ requirements:
 test:
   imports:
     - llama_cloud
+    - llama_cloud.client
   requires:
     - pip
   commands:
