@@ -1,5 +1,5 @@
 {% set name = "llama-cloud" %}
-{% set version = "0.1.46" %}
+{% set version = "0.1.35" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llama_cloud-{{ version }}.tar.gz
-  sha256: e86f8791c053590d70cc59e0fc13ce72f9b681a8e658bc61df86d0285288d8ee
+  sha256: 200349d5d57424d7461f304cdb1355a58eea3e6ca1e6b0d75c66b2e937216983
 
 build:
   number: 0
-  skip: true  # [py<310 or py>=314]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -28,6 +28,7 @@ requirements:
 test:
   imports:
     - llama_cloud
+    - llama_cloud.client
   requires:
     - pip
   commands:
